@@ -1,0 +1,15 @@
+<h2>@Model.Name</h2>
+
+<p>Food Level: @Model.Food</p>
+<p>Attention Level: @Model.Attention</p>
+<p>Rest Level: @Model.Rest</p>
+
+<p>What would you like to do with @Model.Name?</p>
+
+<form action="/pets" method="post">
+  <label for="interactive">Would you like to "Play", "Sleep" or "Eat"?</label>
+  <input id="interactive" name="interactive" type="text">
+  <button type="submit">Submit</button>
+</form>
+
+<a href='/pets'>See your other pets</a>
