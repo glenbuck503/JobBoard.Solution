@@ -7,37 +7,37 @@ namespace Tamagotchi.Models
   public class Pet
   {
 
-    public int MaxFood = 100;
-    public int MaxAttention = 100;
-    public int MaxRest = 100;
-    public int GiveFood = 10;
-    public int GiveAttention = 10;
-    public int GiveRest = 10;
     public string Name { get; set; }
-    public int Id { get; }
+    public int Food { get; set; } = 100;
+    public int Attention { get; set; } = 100;
+    public int Sleep { get; set; } = 100;   
+    public int Id { get; set;}
 
-    public string name;
 
-    public int food;
-    public int attention;
-    public int rest;
     private static List<Pet> _instances = new List<Pet> { };
 
-    public Pet(string name, int food, int attention, int rest)
+    public Pet(string name)
     {
-      
-      // name = this.GetName();
-      food = MaxFood;
-      attention = MaxAttention;
-      rest = MaxRest;
+      Name = name;
+  
       _instances.Add(this);
       Id = _instances.Count;
     }
 
-    // public int Play()
-    // {
+    public void Play()
+    {
+      this.Food -= 50;
+  
+    }
+    public void Rest()
+    {
+      this.Sleep -= 25;
+    }
 
-    // }
+    public void Love()
+    {
+      this.Attention += 75;
+    }
 
     public static List<Pet> GetAll()
     {
